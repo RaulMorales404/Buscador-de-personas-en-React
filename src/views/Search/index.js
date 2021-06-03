@@ -1,18 +1,14 @@
+import {useState}from "react";
 import SearchBox from "./components/SearchBox";
 import "./style.css"
 
 export default function Search(){
-    const handleSearchClick = () => {
-        console.log("BUscar");
-       
-    }
-    const handleCloseClick = () => {
-       console.log("cerrar");
-    }
+    const[isAtTop,setisAtTop] = useState(false);
+const handleCloseOpenSearch = () => setisAtTop(!isAtTop);
 
     return(
-        <div className="search">
-               <SearchBox onSearch={handleSearchClick} onClose={handleCloseClick}/>
+        <div className={`search ${isAtTop ? "search--top":"search--center"}`}>
+               <SearchBox onSearch={handleCloseOpenSearch} onClose={handleCloseOpenSearch}/>
         </div>
      
     );

@@ -3,6 +3,13 @@ import "./style.css"
 
 export default  function SearchBox({onSearch, onClose}){
     const[searchText, setSearchText]= useState(" ");
+    const handleSearchClick =() =>{
+        setSearchText(" ");
+        onClose();
+
+
+    };
+
 
     return(
         <div className="search-box">
@@ -12,7 +19,7 @@ export default  function SearchBox({onSearch, onClose}){
                     <input className="search-box-input" value={searchText} onChange={({target:{value}}) => setSearchText(value)}/>
                 </label>
                 <button onClick={onSearch}> Buscar</button>
-                <button onClick={onClose}> Cerrar</button>
+                <button onClick={handleSearchClick}> Cerrar</button>
             </div>
         </div>
 
