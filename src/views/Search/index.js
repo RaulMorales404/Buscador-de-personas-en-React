@@ -4,6 +4,7 @@ import "./style.css"
 
 //importamos el archvio json con datos
 import data from "../../data/users.json";
+import SearchResults from "./components/SearchResults";
 
 export default function Search(){
 const [isAtTop,setisAtTop] = useState(false);
@@ -43,6 +44,7 @@ console.log(results);
     return(
         <div className={`search ${isAtTop ? "search--top":"search--center"}`}>
                <SearchBox onSearch={handleSearchClick} onClose={handleCloseSearch}/>
+               <SearchResults results={results}/>
         </div>
      
     );

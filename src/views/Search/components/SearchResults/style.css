@@ -1,0 +1,14 @@
+    
+.search-results{
+    display:flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+   
+    }
+    .search-items div{
+        background:#E8E7E7;
+        text-align: center;
+        border-radius:5px;
+        min-width: 800px;
+    }
